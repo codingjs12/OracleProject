@@ -1,0 +1,24 @@
+-- 조회수가 많은 순으로 정렬
+-- 6~10번째 게시글
+
+SELECT *
+FROM (
+    SELECT *
+    FROM BOARD
+    ORDER BY CNT DESC
+) WHERE ROWNUM = 1;
+
+SELECT *
+FROM BOARD
+ORDER BY CNT DESC;
+
+SELECT *
+FROM
+(
+    SELECT ROWNUM AS NUM, T.*
+    FROM(
+        SELECT TITLE, CONTENTS, CNT
+        FROM BOARD
+        ORDER BY CNT DESC
+    ) T
+) WHERE NUM BETWEEN 6 AND 10;
