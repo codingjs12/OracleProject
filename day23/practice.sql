@@ -87,7 +87,10 @@ INNER JOIN DEPARTMENT D3 ON D3.DEPTNO = D2.PART
 WHERE D3.DNAME = '공과대학'
 ;
 
+SELECT *
+FROM DEPARTMENT;
 
+ 
 
 -- ex) 자신보다 키가 큰 학생의 수를 구하시오.
  
